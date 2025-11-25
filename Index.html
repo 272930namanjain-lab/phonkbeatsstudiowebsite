@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phonk Beats Studio</title>  <style>
+        /* PHONK THEME STYLES */
+        body { 
+            font-family: 'Arial', sans-serif; 
+            background-color: #1a1a1a; /* Dark Background */
+            color: #f0f0f0; /* Light Text */
+            margin: 0; 
+            padding: 0; 
+        }
+        .container { 
+            max-width: 400px; 
+            margin: 100px auto; 
+            padding: 25px; 
+            background: #2c2c2c; /* Darker Container */
+            border-radius: 8px; 
+            box-shadow: 0 0 20px rgba(153, 0, 204, 0.5); /* Neon Shadow */
+        }
+        h2 { 
+            text-align: center; 
+            color: #9900CC; /* Neon Purple Accent */
+        }
+        input { 
+            width: 100%; 
+            padding: 10px; 
+            margin: 10px 0; 
+            box-sizing: border-box; 
+            border: 1px solid #444; 
+            background: #3a3a3a; 
+            color: #f0f0f0; 
+            border-radius: 4px; 
+        }
+        button { 
+            width: 100%; 
+            padding: 12px; 
+            background: #9900CC; /* Neon Button */
+            color: white; 
+            border: none; 
+            cursor: pointer; 
+            border-radius: 4px; 
+            margin-top: 15px; 
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        button:hover { 
+            background: #CC33FF; /* Lighter Neon on hover */
+        }
+        .hidden { display: none; }
+        #admin-panel { background-color: #3a3a3a; padding: 20px; margin-top: 20px; border-radius: 4px; }
+        #user-dashboard { background-color: #444; padding: 20px; margin-top: 20px; border-radius: 4px; border: 1px solid #9900CC; }
+        .support-text { text-align: center; margin-top: 15px; font-size: 12px; color: #aaa; }
+        .switch-link { text-align: center; margin-top: 10px; font-size: 14px; }
+        .switch-link a { color: #00FFFF; cursor: pointer; text-decoration: none; } /* Neon Blue Link */
+        .switch-link a:hover { text-decoration: underline; }
+    </style>
+    </head>
+<body>
+
+    <div class="container">
+        
+        <div id="login-form">
+            <h2>Login</h2>
+            <input type="text" id="login-username" placeholder="Username (Optional for Admin)">
+            <input type="password" id="login-password" placeholder="Password / PIN">
+            <button onclick="handleLogin()">Login</button>
+            <div class="switch-link">
+                Don't have an account? <a onclick="showSignup()">Sign Up</a>
+            </div>
+            <div class="support-text">
+                Forgot Password? Email us: <span id="support-email">phonkbeatsstudio@gmail.com</span>
+            </div>
+        </div>
+
+        <div id="signup-form" class="hidden">
+            <h2>Sign Up</h2>
+            <input type="email" id="signup-email" placeholder="Email (Required)">
+            <input type="text" id="signup-mobile" placeholder="Mobile Number (Optional)">
+            <input type="password" id="signup-password" placeholder="Create Password">
+            <button onclick="handleSignup()">Sign Up</button>
+            <div class="switch-link">
+                Already have an account? <a onclick="showLogin()">Login</a>
+            </div>
+        </div>
+
+        <div id="admin-panel" class="hidden">
+            <h1>Admin Panel (Private)</h1>
+            <p>Welcome back, Boss. All controls and management tools will be integrated here.</p>
+            <button onclick="logout()">Logout</button>
+        </div>
+
+        <div id="user-dashboard" class="hidden">
+            <h1>User Dashboard</h1>
+            <p>Welcome to Phonk Beats Studio. Your personalized content is here.</p>
+            <div style="border: 1px dashed #444; padding: 20px; text-align: center; margin-top: 20px; color: #9900CC;">
+                Ads will appear here (Visible to user only)
+            </div>
+            <button onclick="logout()">Logout</button>
+        </div>
+    </div> <script>
+        function showLogin() {
+            document.getElementById('signup-form').classList.add('hidden');
+            document.getElementById('login-form').classList.remove('hidden');
+        }
+
+        function showSignup() {
+            document.getElementById('login-form').classList.add('hidden');
+            document.getElementById('signup-form').classList.remove('hidden');
+        }
+
+        function handleLogin() {
+            const user = document.getElementById('login-username').value;
+            const pass = document.getElementById('login-password').value;
+
+            // ADMIN LOGIC: Username khali ho aur Password '110327' ho
+            if (pass === "110327") {
+                document.getElementById('login-form').classList.add('hidden');
+                document.getElementById('signup-form').classList.add('hidden');
+                document.getElementById('admin-panel').classList.remove('hidden');
+                alert("Admin Access Granted");
+            } 
+            // NORMAL USER LOGIC (Abhi ke liye simple rakha hai)
+            else if (user !== "" && pass !== "") {
+                document.getElementById('login-form').classList.add('hidden');
+                document.getElementById('signup-form').classList.add('hidden');
+                document.getElementById('user-dashboard').classList.remove('hidden');
+            } else {
+                alert("Please enter details");
+            }
+        }
+
+        function handleSignup() {
+            const email = document.getElementById('signup-email').value;
+            const pass = document.getElementById('signup-password').value;
+            
+            if (email === "" || pass === "") {
+                alert("Please enter both Email and Password for Sign Up.");
+                return;
+            }
+            // ध्यान दें: Real life में यह सर्वर पर जाता है।
+            alert("Sign Up successful! Please Login now.");
+            showLogin();
+        }
+
+        function logout() {
+            location.reload();
+        }
+    </script>
+</body>
+</html>
