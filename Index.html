@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Phonk Beats Studio</title>  <style>
+    <title>Phonk Beats Studio</title>
+    <style>
         /* PHONK THEME STYLES */
         body { 
             font-family: 'Arial', sans-serif; 
@@ -14,7 +15,7 @@
         }
         .container { 
             max-width: 400px; 
-            margin: 100px auto; 
+            margin: 50px auto; 
             padding: 25px; 
             background: #2c2c2c; /* Darker Container */
             border-radius: 8px; 
@@ -56,6 +57,57 @@
         .switch-link { text-align: center; margin-top: 10px; font-size: 14px; }
         .switch-link a { color: #00FFFF; cursor: pointer; text-decoration: none; } /* Neon Blue Link */
         .switch-link a:hover { text-decoration: underline; }
+
+        /* Wallet ID Style */
+        .wallet-id {
+            background-color: #1a1a1a;
+            color: #00FFFF;
+            padding: 10px;
+            border-radius: 4px;
+            word-break: break-all;
+            font-family: 'Courier New', monospace;
+            text-align: center;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+
+        /* Ad Slot Style */
+        .ad-slot {
+            border: 1px dashed #9900CC; 
+            padding: 20px; 
+            text-align: center; 
+            margin-top: 20px; 
+            margin-bottom: 20px; 
+            color: #9900CC; 
+            font-size: 12px;
+            background-color: #3a3a3a;
+        }
+        /* Beats Pack Styles */
+        .packs-section {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .pack-card {
+            background-color: #3a3a3a;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 6px;
+            border-left: 5px solid #00FFFF;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .pack-details strong {
+            color: #00FFFF; /* Neon Blue */
+            font-size: 1.1em;
+        }
+        .buy-button {
+            width: 30%;
+            padding: 8px;
+            background: #CC33FF;
+            font-size: 14px;
+            margin: 0;
+        }
     </style>
     </head>
 <body>
@@ -64,6 +116,11 @@
         
         <div id="login-form">
             <h2>Login</h2>
+            
+            <div class="ad-slot">
+                AD SLOT 1: Login Form Banner
+            </div>
+            
             <input type="text" id="login-username" placeholder="Username (Optional for Admin)">
             <input type="password" id="login-password" placeholder="Password / PIN">
             <button onclick="handleLogin()">Login</button>
@@ -94,13 +151,62 @@
 
         <div id="user-dashboard" class="hidden">
             <h1>User Dashboard</h1>
-            <p>Welcome to Phonk Beats Studio. Your personalized content is here.</p>
-            <div style="border: 1px dashed #444; padding: 20px; text-align: center; margin-top: 20px; color: #9900CC;">
-                Ads will appear here (Visible to user only)
+            <p style="text-align:center; color:#CC33FF;">Current Beats Balance: <strong id="beats-balance">0</strong></p>
+            
+            <h3>Your Unique Beats Wallet ID:</h3>
+            <div class="wallet-id" id="beats-wallet-id"></div>
+            <p style="font-size:12px; color:#aaa; margin-top:5px;">(Use this ID for all transactions and earnings tracking.)</p>
+            
+            <div class="packs-section">
+                <h3>Buy Beats Packs</h3>
+                
+                <div class="pack-card">
+                    <div class="pack-details">
+                        <strong>100 BEATS</strong> (Starter Pack)
+                    </div>
+                    <button class="buy-button" onclick="alert('Proceeding to Payment for 100 Beats')">₹99</button>
+                </div>
+                
+                <div class="pack-card">
+                    <div class="pack-details">
+                        <strong>500 BEATS</strong> (Pro Pack)
+                    </div>
+                    <button class="buy-button" onclick="alert('Proceeding to Payment for 500 Beats')">₹399</button>
+                </div>
+                
+                <div class="pack-card">
+                    <div class="pack-details">
+                        <strong>1200 BEATS</strong> (Studio Pack)
+                    </div>
+                    <button class="buy-button" onclick="alert('Proceeding to Payment for 1200 Beats')">₹799</button>
+                </div>
             </div>
+
+            <div class="ad-slot">
+                AD SLOT 2: Dashboard In-Content Ad
+            </div>
+
+            <p style="text-align:center; margin-top:20px;">More content and features coming soon...</p>
+            
             <button onclick="logout()">Logout</button>
         </div>
     </div> <script>
+        // FUNCTION TO GENERATE UNIQUE JAIN WALLET ID (FINAL LOGIC)
+        function generateJainWalletID() {
+            // 1. Jainism Names (Names like Ahimsa, Satya, etc.)
+            const jainNames = ["Ahimsa", "Satya", "Asteya", "Brahmacharya", "Aparigraha", "Anekant", "Syadvada"];
+            const randomName = jainNames[Math.floor(Math.random() * jainNames.length)];
+            
+            // 2. Registration Number (Simulated as 2 random digits, padded with '0')
+            const regNum = Math.floor(Math.random() * 100).toString().padStart(2, '0');
+
+            // 3. Unique Suffix (2 random digits, padded with '0')
+            const uniqueSuffix = Math.floor(Math.random() * 100).toString().padStart(2, '0');
+
+            // Final Format: [Name]-[Reg No][Unique Suffix] (e.g., Ahimsa-1199)
+            return randomName + "-" + regNum + uniqueSuffix;
+        }
+
         function showLogin() {
             document.getElementById('signup-form').classList.add('hidden');
             document.getElementById('login-form').classList.remove('hidden');
@@ -122,13 +228,19 @@
                 document.getElementById('admin-panel').classList.remove('hidden');
                 alert("Admin Access Granted");
             } 
-            // NORMAL USER LOGIC (Abhi ke liye simple rakha hai)
-            else if (user !== "" && pass !== "") {
+            // NORMAL USER LOGIC 
+            else if (pass !== "") {
                 document.getElementById('login-form').classList.add('hidden');
                 document.getElementById('signup-form').classList.add('hidden');
+                
+                // USER DASHBOARD SHOW KARNE SE PEHLE FINAL ID और Balance जनरेट करेंगे
+                const walletId = generateJainWalletID();
+                document.getElementById('beats-wallet-id').textContent = walletId;
+                document.getElementById('beats-balance').textContent = 0; // Initial Balance
+
                 document.getElementById('user-dashboard').classList.remove('hidden');
             } else {
-                alert("Please enter details");
+                alert("Please enter password");
             }
         }
 
@@ -151,3 +263,4 @@
     </script>
 </body>
 </html>
+        
