@@ -155,112 +155,228 @@
             
             <h3>Your Unique Beats Wallet ID:</h3>
             <div class="wallet-id" id="beats-wallet-id"></div>
-            <p style="font-size:12px; color:#aaa; margin-top:5px;">(Use this ID for all transactions and earnings tracking.)</p>
-            
-            <div class="packs-section">
-                <h3>Buy Beats Packs</h3>
-                
-                <div class="pack-card">
-                    <div class="pack-details">
-                        <strong>100 BEATS</strong> (Starter Pack)
-                    </div>
-                    <button class="buy-button" onclick="alert('Proceeding to Payment for 100 Beats')">₹99</button>
-                </div>
-                
-                <div class="pack-card">
-                    <div class="pack-details">
-                        <strong>500 BEATS</strong> (Pro Pack)
-                    </div>
-                    <button class="buy-button" onclick="alert('Proceeding to Payment for 500 Beats')">₹399</button>
-                </div>
-                
-                <div class="pack-card">
-                    <div class="pack-details">
-                        <strong>1200 BEATS</strong> (Studio Pack)
-                    </div>
-                    <button class="buy-button" onclick="alert('Proceeding to Payment for 1200 Beats')">₹799</button>
-                </div>
-            </div>
+            <p style="font-size:12px; color:#aaa;
 
-            <div class="ad-slot">
-                AD SLOT 2: Dashboard In-Content Ad
-            </div>
+                    <!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>डेटा सेलिंग और रिवॉर्ड्स प्लेटफॉर्म | Comming Soon - म्यूजिक</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 1em 0;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px 0;
+        }
+        .section-box {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .coming-soon {
+            text-align: center;
+            padding: 50px;
+            background-color: #ffc107;
+            color: #333;
+            border-radius: 8px;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .btn {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        .btn:hover {
+            background-color: #218838;
+        }
+        footer {
+            text-align: center;
+            padding: 1em 0;
+            background-color: #333;
+            color: white;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>आपका प्लेटफॉर्म 🚀</h1>
+        <nav>
+            <a href="#data-selling">डेटा सेलिंग</a>
+            <a href="#rewards">विथड्रॉल</a>
+            <a href="#admin-login">एडमिन</a>
+            <a href="#support">सपोर्ट</a>
+            <a href="#music">म्यूजिक</a>
+        </nav>
+    </header>
 
-            <p style="text-align:center; margin-top:20px;">More content and features coming soon...</p>
-            
-            <button onclick="logout()">Logout</button>
+    <div class="container">
+        
+        <div id="login-signup" class="section-box">
+            <h2>👤 लॉग इन / साइन अप</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="username">यूजरनेम/ईमेल</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">पासवर्ड</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit" class="btn">लॉग इन</button>
+                <button type="button" class="btn" style="background-color: #007bff;">साइन अप</button>
+            </form>
+            <p style="margin-top: 10px;">**[Backend Logic Placeholder: यहां लॉग इन और साइनअप का PHP/Node.js/Python कोड जुड़ेगा]**</p>
         </div>
-    </div> <script>
-        // FUNCTION TO GENERATE UNIQUE JAIN WALLET ID (FINAL LOGIC)
-        function generateJainWalletID() {
-            // 1. Jainism Names (Names like Ahimsa, Satya, etc.)
-            const jainNames = ["Ahimsa", "Satya", "Asteya", "Brahmacharya", "Aparigraha", "Anekant", "Syadvada"];
-            const randomName = jainNames[Math.floor(Math.random() * jainNames.length)];
+        
+        <div id="data-selling" class="section-box">
+            <h2>💰 डेटा सेलिंग (इंटरनेट शेयरिंग)</h2>
+            <p><strong>[Placeholder: यहां आपका डेटा सेलिंग API की ($एपीआई\_की$) इंटीग्रेट होगा]</strong></p>
+            <p>आपकी वर्तमान डेटा सेलिंग स्थिति: **[API Status Placeholder]**</p>
+            <button class="btn" onclick="startDataSelling()">डेटा सेलिंग शुरू करें</button>
             
-            // 2. Registration Number (Simulated as 2 random digits, padded with '0')
-            const regNum = Math.floor(Math.random() * 100).toString().padStart(2, '0');
+            <h3 style="margin-top: 20px;">दैनिक रिवॉर्ड</h3>
+            <div style="border: 1px dashed #ccc; padding: 15px; text-align: center;">
+                <p>डेली रिवॉर्डेड ऐड देखने के लिए प्लेसहोल्डर:</p>
+                <p>$$[Google AdSense Reward Ad Code Placeholder]$$</p>
+                <p>दैनिक ₹10 कमाने के लिए यह ऐड देखें।</p>
+            </div>
+        </div>
 
-            // 3. Unique Suffix (2 random digits, padded with '0')
-            const uniqueSuffix = Math.floor(Math.random() * 100).toString().padStart(2, '0');
+        <div id="rewards" class="section-box">
+            <h2>💸 विथड्रॉल</h2>
+            <p>वर्तमान बैलेंस: **[User Balance Placeholder]**</p>
+            <form id="withdrawalForm">
+                <div class="form-group">
+                    <label for="upiId">आपका UPI ID (उदाहरण: user@bank)</label>
+                    <input type="text" id="upiId" name="upiId" required>
+                </div>
+                <div class="form-group">
+                    <label for="amount">राशि</label>
+                    <input type="number" id="amount" name="amount" required>
+                </div>
+                <button type="submit" class="btn" style="background-color: #dc3545;">विथड्रॉल करें</button>
+            </form>
+            <p id="withdrawalMessage" style="margin-top: 10px;">**[Backend Logic Placeholder: विथड्रॉल प्रोसेस शुरू होने पर 'विथड्रॉल प्रोसेसिंग' और पूरा होने पर नोटिफिकेशन]**</p>
+        </div>
 
-            // Final Format: [Name]-[Reg No][Unique Suffix] (e.g., Ahimsa-1199)
-            return randomName + "-" + regNum + uniqueSuffix;
-        }
+        <div id="music" class="section-box">
+            <h2>🎶 म्यूजिक जनरेशन</h2>
+            <div class="coming-soon">
+                <p>यह फीचर जल्द ही आने वाला है। (Coming Soon)</p>
+            </div>
+        </div>
 
-        function showLogin() {
-            document.getElementById('signup-form').classList.add('hidden');
-            document.getElementById('login-form').classList.remove('hidden');
-        }
+        <div id="admin-login" class="section-box">
+            <h2>🔒 एडमिन पैनल</h2>
+            <form id="adminForm">
+                <div class="form-group">
+                    <label for="adminCode">एडमिन एक्सेस कोड</label>
+                    <input type="password" id="adminCode" name="adminCode" required>
+                </div>
+                <button type="submit" class="btn" style="background-color: #6c757d;">एडमिन पैनल एक्सेस</button>
+            </form>
+            <p id="adminStatus" style="margin-top: 10px;">**[Backend Logic Placeholder: कोड 110327 से एक्सेस नियंत्रित होगा]**</p>
+        </div>
 
-        function showSignup() {
-            document.getElementById('login-form').classList.add('hidden');
-            document.getElementById('signup-form').classList.remove('hidden');
-        }
+        <div id="support" class="section-box">
+            <h2>📧 सपोर्ट</h2>
+            <p>यदि आपको कोई समस्या या प्रश्न है, तो कृपया हमें ईमेल करें:</p>
+            <p><strong><a href="mailto:phonkbeatsstudio@gmail.com">phonkbeatsstudio@gmail.com</a></strong></p>
+        </div>
 
-        function handleLogin() {
-            const user = document.getElementById('login-username').value;
-            const pass = document.getElementById('login-password').value;
+    </div>
 
-            // ADMIN LOGIC: Username khali ho aur Password '110327' ho
-            if (pass === "110327") {
-                document.getElementById('login-form').classList.add('hidden');
-                document.getElementById('signup-form').classList.add('hidden');
-                document.getElementById('admin-panel').classList.remove('hidden');
-                alert("Admin Access Granted");
-            } 
-            // NORMAL USER LOGIC 
-            else if (pass !== "") {
-                document.getElementById('login-form').classList.add('hidden');
-                document.getElementById('signup-form').classList.add('hidden');
-                
-                // USER DASHBOARD SHOW KARNE SE PEHLE FINAL ID और Balance जनरेट करेंगे
-                const walletId = generateJainWalletID();
-                document.getElementById('beats-wallet-id').textContent = walletId;
-                document.getElementById('beats-balance').textContent = 0; // Initial Balance
+    <footer>
+        <p>&copy; 2025 आपका प्लेटफॉर्म। सभी अधिकार सुरक्षित।</p>
+    </footer>
 
-                document.getElementById('user-dashboard').classList.remove('hidden');
+    <script>
+        // यह केवल फ्रंटएंड प्लेसहोल्डर है।
+        // असली सुरक्षा और लॉजिक सर्वर-साइड (PHP/Node.js/Python) पर लागू होना चाहिए।
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            console.log('लॉग इन प्रयास. बैकएंड लॉजिक की आवश्यकता है।');
+            // यहां AJAX/Fetch कॉल बैकएंड को जाएगा
+        });
+
+        document.getElementById('adminForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const code = document.getElementById('adminCode').value;
+            const status = document.getElementById('adminStatus');
+            
+            // यह क्लाइंट-साइड (असुरक्षित) जाँच केवल डेमो के लिए है
+            if (code === '110327') {
+                status.textContent = 'सफलता! एडमिन पैनल पर रीडायरेक्ट किया जा रहा है...';
+                status.style.color = 'green';
+                // असली कोड में, यह जाँच सर्वर पर होनी चाहिए।
             } else {
-                alert("Please enter password");
+                status.textContent = 'अमान्य एक्सेस कोड।';
+                status.style.color = 'red';
             }
-        }
+        });
 
-        function handleSignup() {
-            const email = document.getElementById('signup-email').value;
-            const pass = document.getElementById('signup-password').value;
+        document.getElementById('withdrawalForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const upiId = document.getElementById('upiId').value;
+            const message = document.getElementById('withdrawalMessage');
             
-            if (email === "" || pass === "") {
-                alert("Please enter both Email and Password for Sign Up.");
-                return;
-            }
-            // ध्यान दें: Real life में यह सर्वर पर जाता है।
-            alert("Sign Up successful! Please Login now.");
-            showLogin();
-        }
+            // विथड्रॉल लॉजिक के लिए प्लेसहोल्डर
+            message.textContent = `विथड्रॉल प्रोसेसिंग: UPI ID ${upiId} पर।`;
+            message.style.color = 'orange';
 
-        function logout() {
-            location.reload();
+            // 5 सेकंड के बाद विथड्रॉल पूरा होने का नकली नोटिफिकेशन
+            setTimeout(() => {
+                message.textContent = `विथड्रॉल सफल! आपको जल्द ही सूचित किया जाएगा।`;
+                message.style.color = 'green';
+                // असली कोड में, यह एपीआई कॉल सर्वर से पेमेंट गेटवे को जाएगा।
+            }, 5000);
+        });
+
+        function startDataSelling() {
+            alert('डेटा सेलिंग API कॉल ट्रिगर किया गया।');
+            // यहां आपका डेटा सेलिंग API की का उपयोग करने वाला फंक्शन आएगा।
         }
     </script>
 </body>
 </html>
-        
